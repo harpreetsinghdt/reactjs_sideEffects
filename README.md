@@ -5,6 +5,7 @@
 useEffect is a React Hook that lets you synchronize a component with an external system.
 https://react.dev/reference/react/useEffect
 
+```
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -20,6 +21,7 @@ connection.disconnect();
 }, [serverUrl, roomId]);
 // ...
 }
+```
 
 ## useCallback
 
@@ -27,6 +29,7 @@ useCallback is a React Hook that lets you cache a function definition between re
 
 https://react.dev/reference/react/useCallback
 
+```
 import { useCallback } from 'react';
 
 export default function ProductPage({ productId, referrer, theme }) {
@@ -36,5 +39,6 @@ referrer,
 orderDetails,
 });
 }, [productId, referrer]);
+```
 
 https://react.dev/learn/synchronizing-with-effects
