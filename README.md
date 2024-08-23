@@ -10,16 +10,16 @@ import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 
 function ChatRoom({ roomId }) {
-const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+	const [serverUrl, setServerUrl] = useState('https://localhost:1234');
 
-useEffect(() => {
-const connection = createConnection(serverUrl, roomId);
-connection.connect();
-return () => {
-connection.disconnect();
-};
-}, [serverUrl, roomId]);
-// ...
+	useEffect(() => {
+		const connection = createConnection(serverUrl, roomId);
+		connection.connect();
+		return () => {
+			connection.disconnect();
+		};
+	}, [serverUrl, roomId]);
+	// ...
 }
 ```
 
@@ -33,12 +33,13 @@ https://react.dev/reference/react/useCallback
 import { useCallback } from 'react';
 
 export default function ProductPage({ productId, referrer, theme }) {
-const handleSubmit = useCallback((orderDetails) => {
-post('/product/' + productId + '/buy', {
-referrer,
-orderDetails,
+	const handleSubmit = useCallback((orderDetails) => {
+		post('/product/' + productId + '/buy', {
+			referrer,
+			orderDetails,
+		});
+	}, [productId, referrer]);
 });
-}, [productId, referrer]);
 ```
 
 https://react.dev/learn/synchronizing-with-effects
